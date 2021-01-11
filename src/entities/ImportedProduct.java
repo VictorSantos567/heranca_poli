@@ -21,13 +21,14 @@ public class ImportedProduct extends Product {
 	}
 
 	@Override
-	public String priceTag() {
-		return super.getName() + " $ " + super.getPrice() + " (Customs fee: $ " + customsFee + ")";
+	public final String priceTag() {
+		return super.getName() + " $ " + String.format("%.2f", totalPrice()) + " (Customs fee: $ "
+				+ String.format("%.2f", customsFee) + ")";
 	}
-	
+
 	public Double totalPrice() {
-		super.setPrice(getPrice()+customsFee);
-		return super.getPrice(); 
+		super.setPrice(getPrice() + customsFee);
+		return super.getPrice();
 	}
 
 }
