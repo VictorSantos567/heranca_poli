@@ -27,8 +27,7 @@ public class ImportedProduct extends Product {
 	}
 
 	public Double totalPrice() {
-		super.setPrice(getPrice() + customsFee);
-		return super.getPrice();
+		return super.getPrice() + customsFee;
 	}
 
 }
